@@ -1,0 +1,10 @@
+from .signup import ns as Signup_namespace
+from .guest_signup import ns as SignupAsGuest_namespace
+from .login import ns as login_namespaces
+from .buy_hero import ns as BuyHero_namespace
+from  .get_all_hero import ns as  GetAllHero_namespace
+from .boost_hero import ns as Boost_Hero
+from .get_coin import ns as GetCoin_namespace
+from .get_active_hero import ns as GetActiveHero_namespace
+from .startGame import ns as StartGame_namespace
+from .buy_coin import ns as BuyCoin_namespace

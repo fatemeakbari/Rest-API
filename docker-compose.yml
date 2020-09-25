@@ -1,0 +1,38 @@
+version: '3'
+ 
+services:
+    app:
+        
+        build: ./app
+        restart: always
+        ports:
+            - "9008:5008"
+        volumes:
+            - ./app:/flaskapp/app
+        depends_on :
+            - redisdb
+            - postgres
+                  
+
+        
+    postgres: 
+        image : "postgres:9.6"
+        environment:
+            - POSTGRES_USER=fateme
+            - POSTGRES_PASSWORD=123456
+            - POSTGRES_DB=nimble_knight
+                  
+        ports:
+            - "5432"
+        volumes:
+            - postgresdb:/var/lib/postgresql
+                  
+    redisdb:
+        image : 'redis:4.0'
+        expose :
+            - '6379'
+        volumes :
+            - /var/lib/redisdb 
+            
+volumes:
+    postgresdb:        
